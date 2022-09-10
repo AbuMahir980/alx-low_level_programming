@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <unistd.h>
 /**
@@ -14,5 +15,5 @@ int main(void)
 		putchar(ch);
 	}
 	putchar('\n');
-	return (0);
+return (0);
 }
