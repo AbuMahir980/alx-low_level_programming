@@ -1,19 +1,35 @@
-
+#include <stdlib.h>
+#include <time.h>
 #include <stdio.h>
-#include <unistd.h>
+
 /**
  * main -Entry point
+ *
  * description - points the alphabets in lowercase/n
+ *
  * Return: Always 0 success
  */
 int main(void)
 {
-	int ch;
+	int n;
+	int r;
 
-	for (ch = 'a'; ch <= 'z'; ch++)
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
+
+	r = n % 10;
+	if (r > 5)
 	{
-		putchar(ch);
+		printf("Last digit of %i is %i and is greater than 5\n", n, r);
 	}
-	putchar('\n');
-return (0);
+	else if (r == 0)
+	{
+		printf("Last digit of %i is %i and is 0\n", n, r);
+	}
+	else
+	{
+		printf("Last digit of %i is %i and is less than 6 and not 0\n", n, r);
+	}
+
+	return (0);
 }
